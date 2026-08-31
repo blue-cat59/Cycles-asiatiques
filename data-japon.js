@@ -87,6 +87,7 @@ C'est ce regard depuis le bas, vers ceux que l'Histoire officielle ignore, qui e
     realisateur: "Ryûsuke Hamaguchi",
     annee: 2021,
     epoque: "Japon contemporain (1990–aujourd'hui)",
+    affiche: "images/Drive-My-Car-poster.jpeg",
     critique: `Un film sur le deuil et la parole empêchée, porté par une mise en scène d'une lenteur totalement maîtrisée.
 
 Ce qui frappe surtout, c'est la façon dont le texte de Tchekhov infuse peu à peu la vie des personnages, jusqu'à devenir leur seul langage possible.`
