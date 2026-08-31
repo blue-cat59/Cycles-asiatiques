@@ -17,6 +17,11 @@
                   faire apparaître un nouveau séparateur.
      note         (optionnel)   — une courte phrase de contexte
      lien         (optionnel)   — URL Letterboxd du film
+     critique     (optionnel)   — votre texte de critique complet.
+                  Il s'affiche sur la fiche dédiée du film (accessible
+                  en cliquant sur le titre depuis la frise). Pour un
+                  saut de paragraphe, laissez une ligne vide entre
+                  deux paragraphes, comme dans l'exemple ci-dessous.
    ========================================================= */
 
 const FILMS_JAPON = [
@@ -27,6 +32,9 @@ const FILMS_JAPON = [
     epoque: "Époque d'Edo (1603–1868)",
     note: "Un jeune médecin apprend son métier auprès d'un praticien intraitable, dans un Japon encore féodal.",
     lien: "https://letterboxd.com/film/red-beard/",
+    critique: `Barberousse ouvre le cycle par un geste presque paradoxal : filmer l'Histoire depuis sa marge, dans un dispensaire de quartier plutôt que dans un château ou un champ de bataille.
+
+C'est ce regard depuis le bas, vers ceux que l'Histoire officielle ignore, qui en fait un point de départ idéal — tout le reste du cycle peut se lire comme une suite de variations sur cette même question : qui raconte, et depuis où.`,
   },
   {
     titre: "Le Château de l'araignée",
