@@ -20,10 +20,10 @@ function echapper(str) {
 
 // Un seul endroit où sont déclarés les 4 cycles : id -> {nom de la page, tableau de données}
 const CYCLES = {
-  'japon':    { page: 'japon.html',           get films() { return window.FILMS_JAPON; } },
-  'coree':    { page: 'coree.html',           get films() { return window.FILMS_COREE; } },
-  'chine-hk': { page: 'chine-hongkong.html',  get films() { return window.FILMS_CHINE_HK; } },
-  'taiwan':   { page: 'taiwan.html',          get films() { return window.FILMS_TAIWAN; } },
+  'japon':    { page: 'japon.html',           get films() { return typeof FILMS_JAPON !== 'undefined' ? FILMS_JAPON : null; } },
+  'coree':    { page: 'coree.html',           get films() { return typeof FILMS_COREE !== 'undefined' ? FILMS_COREE : null; } },
+  'chine-hk': { page: 'chine-hongkong.html',  get films() { return typeof FILMS_CHINE_HK !== 'undefined' ? FILMS_CHINE_HK : null; } },
+  'taiwan':   { page: 'taiwan.html',          get films() { return typeof FILMS_TAIWAN !== 'undefined' ? FILMS_TAIWAN : null; } },
 };
 
 // Construit l'URL vers la page de détail d'un film, pour un cycle donné
@@ -122,10 +122,10 @@ function renderFicheFilm() {
  */
 function renderCompteurs() {
   const cycles = [
-    { id: 'japon', data: window.FILMS_JAPON },
-    { id: 'coree', data: window.FILMS_COREE },
-    { id: 'chine-hk', data: window.FILMS_CHINE_HK },
-    { id: 'taiwan', data: window.FILMS_TAIWAN },
+    { id: 'japon', data: typeof FILMS_JAPON !== 'undefined' ? FILMS_JAPON : null },
+    { id: 'coree', data: typeof FILMS_COREE !== 'undefined' ? FILMS_COREE : null },
+    { id: 'chine-hk', data: typeof FILMS_CHINE_HK !== 'undefined' ? FILMS_CHINE_HK : null },
+    { id: 'taiwan', data: typeof FILMS_TAIWAN !== 'undefined' ? FILMS_TAIWAN : null },
   ];
   cycles.forEach(({ id, data }) => {
     const el = document.querySelector(`[data-count-for="${id}"]`);
