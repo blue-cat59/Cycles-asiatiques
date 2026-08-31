@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr" data-cycle="taiwan">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cycle Taïwan — Cinémas d'Asie de l'Est</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">Cinémas d'Asie de l'Est</a>
+    <a class="back-link" href="index.html">← Tous les cycles</a>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="cycle-hero">
+    <span class="eyebrow">Cycle 04</span>
+    <h1>Taïwan</h1>
+    <p>De l'occupation japonaise à la Taïwan démocratique — colonisation, retrait du Kuomintang, loi martiale et miracle économique, jusqu'à la société ouverte d'aujourd'hui.</p>
+  </section>
+
+  <div id="timeline" class="timeline"></div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">Cycle Taïwan — <span data-count-for="taiwan">—</span></div>
+</footer>
+
+<script src="data-taiwan.js"></script>
+<script src="script.js"></script>
+<script>
+  renderCycle(FILMS_TAIWAN);
+  renderCompteurs();
+</script>
+</body>
+</html>

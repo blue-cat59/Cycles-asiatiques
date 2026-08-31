@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cinémas d'Asie de l'Est, lus par l'Histoire</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <span class="brand">Cinémas d'Asie de l'Est</span>
+  </div>
+</header>
+
+<main>
+  <section class="hero wrap">
+    <h1>Lire l'Histoire d'un pays<br>à travers son cinéma</h1>
+    <p class="lede">Quatre cycles — Japon, Corée, Chine continentale &amp; Hong Kong, Taïwan — construits sur un an, film après film, environ 600 titres au total.</p>
+    <p>Chaque cycle n'est pas classé par date de sortie, mais par <strong>ordre chronologique narratif</strong> : la place d'un film dépend de l'époque qu'il représente, pas de l'année où il a été tourné. Un film de 2026 situé au début du XIX<sup>e</sup> siècle précède ainsi un classique des années 1950 qui se déroule plus tard dans l'Histoire. C'est un parcours anthropologique — comment un peuple se raconte lui-même — autant qu'un panorama du cinéma du pays, entre œuvres cultes et découvertes moins connues.</p>
+  </section>
+
+  <section class="wrap">
+    <div class="cycles-grid">
+      <a class="cycle-card" href="japon.html" style="--card-accent:#B8412F">
+        <span class="stripe"></span>
+        <h2>Japon</h2>
+        <span class="span">de l'époque d'Edo au Japon contemporain</span>
+        <span class="count" data-count-for="japon">—</span>
+      </a>
+      <a class="cycle-card" href="coree.html" style="--card-accent:#2C4A6E">
+        <span class="stripe"></span>
+        <h2>Corée</h2>
+        <span class="span">de l'occupation japonaise à aujourd'hui</span>
+        <span class="count" data-count-for="coree">—</span>
+      </a>
+      <a class="cycle-card" href="chine-hongkong.html" style="--card-accent:#A6742C">
+        <span class="stripe"></span>
+        <h2>Chine continentale &amp; Hong Kong</h2>
+        <span class="span">des seigneurs de guerre à nos jours</span>
+        <span class="count" data-count-for="chine-hk">—</span>
+      </a>
+      <a class="cycle-card" href="taiwan.html" style="--card-accent:#3C6E5C">
+        <span class="stripe"></span>
+        <h2>Taïwan</h2>
+        <span class="span">de l'occupation japonaise à la Taïwan démocratique</span>
+        <span class="count" data-count-for="taiwan">—</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="method wrap">
+    <h3>Méthode</h3>
+    <p>Les listes ont été constituées sur Letterboxd puis reclassées ici selon la période historique représentée à l'écran plutôt que l'année de production. Chaque rupture de période fait apparaître un nouvel en-tête sur la frise ; chaque film affiche, à côté de son titre, l'année où il représente son histoire — et, en léger retrait, l'année où il est réellement sorti en salles.</p>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">Un projet personnel de cinéphilie et d'histoire — listes complètes sur Letterboxd.</div>
+</footer>
+
+<script src="data-japon.js"></script>
+<script src="data-coree.js"></script>
+<script src="data-chine-hk.js"></script>
+<script src="data-taiwan.js"></script>
+<script src="script.js"></script>
+<script>renderCompteurs();</script>
+</body>
+</html>

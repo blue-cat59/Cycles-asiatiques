@@ -1,0 +1,335 @@
+/* =========================================================
+   Cinémas d'Asie de l'Est — feuille de style partagée
+   Système : encre sur papier, une couleur d'accent par cycle
+   ========================================================= */
+
+:root {
+  --paper: #EDEAE1;
+  --paper-deep: #E3DECB;
+  --ink: #1C1B17;
+  --ink-soft: #58554C;
+  --ink-faint: #8A8577;
+  --line: #C9C3AE;
+
+  --accent: #B8412F; /* valeur par défaut, écrasée par [data-cycle] */
+
+  --font-display: "Shippori Mincho", serif;
+  --font-body: "Zen Kaku Gothic New", "Hiragino Sans", sans-serif;
+  --font-mono: "Space Mono", monospace;
+
+  --maxw: 780px;
+}
+
+[data-cycle="japon"]   { --accent: #B8412F; }
+[data-cycle="coree"]   { --accent: #2C4A6E; }
+[data-cycle="chine-hk"]{ --accent: #A6742C; }
+[data-cycle="taiwan"]  { --accent: #3C6E5C; }
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration-color: var(--accent);
+  text-underline-offset: 3px;
+}
+a:hover { text-decoration-color: var(--ink); }
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.wrap {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---------- header ---------- */
+
+.site-header {
+  padding: 28px 0 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.site-header .wrap {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding-bottom: 18px;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.brand {
+  font-family: var(--font-display);
+  font-size: 17px;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.back-link {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  text-decoration: none;
+  color: var(--ink-soft);
+  white-space: nowrap;
+}
+.back-link:hover { color: var(--ink); }
+
+/* ---------- hero (page d'accueil) ---------- */
+
+.hero {
+  padding: 64px 0 48px;
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(34px, 6vw, 52px);
+  line-height: 1.15;
+  margin: 0 0 22px;
+}
+
+.hero p {
+  max-width: 58ch;
+  color: var(--ink-soft);
+  font-size: 17px;
+}
+
+.hero .lede {
+  font-size: 19px;
+  color: var(--ink);
+}
+
+/* ---------- grille des 4 cycles ---------- */
+
+.cycles-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  margin: 40px 0 64px;
+}
+
+.cycle-card {
+  background: var(--paper);
+  padding: 28px 24px;
+  text-decoration: none;
+  color: var(--ink);
+  position: relative;
+  transition: background 0.15s ease;
+  display: block;
+}
+
+.cycle-card:hover { background: var(--paper-deep); }
+
+.cycle-card .stripe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--card-accent, var(--accent));
+}
+
+.cycle-card h2 {
+  font-family: var(--font-display);
+  font-size: 22px;
+  margin: 10px 0 6px;
+}
+
+.cycle-card .span {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ink-soft);
+  display: block;
+  margin-bottom: 10px;
+}
+
+.cycle-card .count {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--card-accent, var(--accent));
+}
+
+@media (max-width: 600px) {
+  .cycles-grid { grid-template-columns: 1fr; }
+}
+
+/* ---------- méthode (accueil) ---------- */
+
+.method {
+  border-top: 1px solid var(--line);
+  padding: 40px 0 64px;
+}
+
+.method h3 {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-soft);
+  margin: 0 0 16px;
+}
+
+.method p { color: var(--ink-soft); max-width: 62ch; }
+.method strong { color: var(--ink); font-weight: 700; }
+
+/* ---------- page cycle : intro ---------- */
+
+.cycle-hero {
+  padding: 48px 0 20px;
+}
+
+.cycle-hero .eyebrow {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.cycle-hero h1 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(30px, 5vw, 44px);
+  margin: 10px 0 18px;
+}
+
+.cycle-hero p {
+  color: var(--ink-soft);
+  max-width: 60ch;
+}
+
+/* ---------- frise / timeline ---------- */
+
+.timeline {
+  position: relative;
+  padding: 20px 0 80px;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--line);
+}
+
+.era {
+  margin: 46px 0 22px;
+  padding-left: 24px;
+  position: relative;
+}
+
+.era-stroke {
+  display: block;
+  width: 72px;
+  height: 10px;
+  margin-bottom: 10px;
+  color: var(--accent);
+}
+
+.era h2 {
+  font-family: var(--font-display);
+  font-size: 20px;
+  margin: 0;
+}
+
+.era .years {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ink-faint);
+}
+
+.film {
+  position: relative;
+  padding: 14px 0 14px 24px;
+  border-bottom: 1px solid var(--line);
+}
+
+.film::before {
+  content: "";
+  position: absolute;
+  left: 1px;
+  top: 22px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--paper);
+  border: 1.5px solid var(--accent);
+}
+
+.film-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.film h3 {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 16.5px;
+  margin: 0;
+}
+
+.film .realisateur {
+  color: var(--ink-soft);
+  font-weight: 400;
+}
+
+.film .sorti {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  color: var(--ink-faint);
+  white-space: nowrap;
+}
+
+.film .note {
+  margin: 6px 0 0;
+  color: var(--ink-soft);
+  font-size: 14.5px;
+  max-width: 62ch;
+}
+
+.film .lien {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+/* ---------- footer ---------- */
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding: 28px 0 48px;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  color: var(--ink-faint);
+}
+
+/* ---------- accessibilité : mouvement réduit ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+}
